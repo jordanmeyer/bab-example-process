@@ -39,7 +39,7 @@ Checkpoint the plan, model/UI/tests/config/workflow after dependency verificatio
 
 ## Concrete Steps
 
-From this root run npm ci --cache /private/tmp/bab-npm-cache; node /Users/jordan/Projects/decision-999/plugins/browser-app-builder/scripts/check-dependencies.mjs /private/tmp/bab-recipe-examples-2026-10-09/process; npm run build. Start npm run test:browser -- --port 9507 and npm run preview -- --port 9508. Open /tests/ on9507 and /bab-example-process/ on9508. Inspect/stage named public/synthetic source paths and commit on main using the authorized local identity. Record full commit and relevant-path cleanliness before/after final checks. Reports can follow without changing executable source or PLAN.
+From this root run npm ci --cache /private/tmp/bab-npm-cache; node /Users/jordan/Projects/decision-999/plugins/browser-app-builder/scripts/check-dependencies.mjs /private/tmp/bab-recipe-examples-2026-10-09/process; npm run build. Start npm run test:browser -- --port 9721 and npm run preview -- --port 9722. Open /tests/ on9721 and /bab-example-process/ on9722. Inspect/stage named public/synthetic source paths and commit on main using the authorized local identity. Record full commit and relevant-path cleanliness before/after final checks. Reports can follow without changing executable source or PLAN.
 
 ## Validation and Acceptance
 
@@ -47,7 +47,7 @@ Model page must visibly show37/37 passed and0 failed after adding the finite-ass
 
 ## Idempotence and Recovery
 
-npm ci/build are repeatable. Dist/node_modules remain ignored. Use only assigned ports9507/9508 and stop only these servers. Draft invalidity is recoverable without guessing routes. JSON failures preserve current data. Do not force push or invent publication. Source changes require affected reevaluation, not replacement of an old test SHA.
+npm ci/build are repeatable. Dist/node_modules remain ignored. Use only assigned ports9721/9722 and stop only these servers. Draft invalidity is recoverable without guessing routes. JSON failures preserve current data. Do not force push or invent publication. Source changes require affected reevaluation, not replacement of an old test SHA.
 
 ## Artifacts and Notes
 
@@ -58,3 +58,9 @@ Exploratory browser output:34/34 passed;0 failed. Actual hidden-node check: five
 validate(process) returns human-readable errors. analyze(process) returns valid/errors and, only when valid, touch/wait/elapsed, step visit contributions and team work/load/excess. parseProcess(text) enforces256KiB, strict JSON and all model rules before returning a candidate. sampleProcess(simplified) creates invented70/30 or90/10 cases. React Flow12.12.0, React/React DOM19.3.0, Vite8.3.4 and React plugin6.1.2 are exact. Runtime assets and fonts stay local. No backend exists.
 
 Revision note: initial living plan records actual progress and outstanding checks; no final review outcome is inferred from the build.
+
+## Live revision milestone — 2026-10-09
+
+The owner authorized the checklist corrections. Preserve the acyclic probability model and its independently derived known answers; revise app/App.jsx and app/style.css so capacity leads, nominal time is qualified, and the unclipped editor/list have readable units. Bundle the canonical OFL font files. Update PLAN, DECISIONS and BUILD-STORY before committing. Reinstall pinned dependencies, check inventory and production build, then test /tests/ on 9721 and production /bab-example-process/ on 9722. At 1440/390/320 verify no page overflow, loaded fonts, reachable controls and correct pre-interaction state after Back. Keep failures in EVALUATION. Independent review and coordinator publication follow.
+
+Revision note: the old arithmetic remains valid but its presentation could imply a feasible forecast; this revision makes that limitation decisive and visible.

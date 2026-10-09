@@ -20,6 +20,7 @@ ${entry.license || 'See notice'}
 ` +
     (await Promise.all(notices.map(name => readFile(join(path, name), 'utf8')))).join('\n'));
 }
+for (const font of ['ebgaramond', 'opensans']) sections.push(await readFile(`app/theme/fonts/${font}-license.txt`, 'utf8'));
 await mkdir('app/public', { recursive: true });
 await writeFile('app/public/THIRD-PARTY-NOTICES.txt', sections.join('\n\n--------\n\n').split('\n').map(line => line.trimEnd()).join('\n').trimEnd() + '\n');
 console.log(`Retained notices for ${sections.length} installed packages.`);

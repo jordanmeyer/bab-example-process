@@ -25,3 +25,7 @@ Use Node22.19.0/npm10.9.3. npm ci --cache /private/tmp/bab-npm-cache; npm run te
 All processes/fixtures are synthetic, and the exact planning exchange is explicitly simulated. Public Git attribution was authorized as Jordan Meyer <jordanmeyer@protonmail.com>. React Flow12.12.0 (MIT) supplies editable diagrams; React/React DOM19.3.0 (MIT) are required runtime peers. Vite8.3.4 and React plugin6.1.2 build the local bundle. Exact lockfile retained; all installed runtime distribution notices collected in app/public/THIRD-PARTY-NOTICES.txt and linked from the app. React Flow attribution retained.
 
 Campus Designer's unchanged Duke navy/royal and supporting copper provide visual direction without marks or affiliation. Georgia is used in place of EB Garamond and Arial/Helvetica in place of Open Sans. These are system fonts, no remote fonts or redistributed binaries. Native keyboard alternatives and text tables complement the diagram; actual checks are recorded without claiming full accessibility certification.
+
+## Live revision
+
+Local OFL EB Garamond 400 and Open Sans 400/600 replace the system-only pairing; licenses remain with app/theme/fonts. Capacity now leads; nominal time excludes congestion. Read [How this was built](BUILD-STORY.md).

@@ -9,3 +9,5 @@
 2026-10-09: Strict version1 JSON and bounded inputs avoid an unneeded migration layer. No autosave/storage/services. Standard React escaping keeps labels literal. All samples are invented.
 
 2026-10-09: Public repository/base/source are bab-example-process, /bab-example-process/ and https://github.com/jordanmeyer/bab-example-process. Coordinator owns publication after reviewer PASS. Approved public Git attribution is Jordan Meyer <jordanmeyer@protonmail.com>; this name/email becomes public with pushed history. Only local Git identity settings are changed.
+
+2026-10-09 live revision: Owner-authorized review corrections preserve the agreed entered-wait model. Promote capacity and qualify nominal time instead of adding an unsupported queue approximation. Use capacity/process views to keep the decision short; a native list replaces the miniature graph on phones. Public BUILD-STORY records the original simulated planning and actual revision without inventing approval.
