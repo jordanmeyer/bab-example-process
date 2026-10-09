@@ -50,9 +50,9 @@ function App() {
   const saved = result.valid ? reference.elapsed - result.elapsed : null;
   const overloaded = result.valid ? result.teams.filter(t => t.load > 1) : [];
   return <>
-    <a className="skip" href="#workspace">Skip to process editor</a>
+    <a className="skip" href="#decision">Skip to decision</a>
     <header><a className="brand" href="#"><span className="brand-icon" aria-hidden="true">A</span><span>APPROVAL STUDIO<small>Process decisions, made visible</small></span></a><span className="local-badge">Local workspace</span><a href="https://github.com/jordanmeyer/bab-example-process">Source</a></header>
-    <main>
+    <main id="decision" tabIndex="-1">
       <section className="hero"><div><p className="eyebrow">A fictional purchase approval process</p><h1>Shorter routes. Same bottleneck?</h1><p>Learn why a shorter approval route can leave the bottleneck unchanged. Synthetic teaching data; edits update results immediately.</p></div><aside><span className="case-number">01</span><h2>The decision</h2><p>Send fewer requests through procurement. Does that reduce nominal time—and does it fix the capacity problem?</p><button className="primary" onClick={() => loadSample(true)}>Try the 90/10 policy</button><button className="text-button" onClick={() => loadSample(false)}>Restore 70/30 example</button></aside></section>
       <div className={`notice ${failed ? 'error' : ''}`} role="status">{notice}</div>
       <section className="scenario-bar"><label>Scenario name<input value={p.name} maxLength="80" onChange={e => update({ ...p, name: e.target.value })}/></label><label className="arrivals">Requests per day<input type="number" min="0" max="10000" step="1" value={field(p.arrivals)} onChange={e => update({ ...p, arrivals: asNumber(e) })}/></label><div className="file-actions"><button disabled={!result.valid} onClick={download}>Export JSON</button><label className="file-button">Import JSON<input aria-label="Import process JSON" type="file" accept=".json,application/json" onChange={importFile}/></label></div></section>
