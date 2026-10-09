@@ -11,3 +11,7 @@
 2026-10-09: Public repository/base/source are bab-example-process, /bab-example-process/ and https://github.com/jordanmeyer/bab-example-process. Coordinator owns publication after reviewer PASS. Approved public Git attribution is Jordan Meyer <jordanmeyer@protonmail.com>; this name/email becomes public with pushed history. Only local Git identity settings are changed.
 
 2026-10-09 live revision: Owner-authorized review corrections preserve the agreed entered-wait model. Promote capacity and qualify nominal time instead of adding an unsupported queue approximation. Use capacity/process views to keep the decision short; a native list replaces the miniature graph on phones. Public BUILD-STORY records the original simulated planning and actual revision without inventing approval.
+
+## Checklist corrections — October 9, 2026
+
+Use a small staged outgoing-share group rather than invalidating after the first branch keystroke. Keep explicit validation on Apply. One pre-structural-edit draft is enough recovery for this scope; no undo stack or autosave. The combined React Flow onDelete callback captures node and connected-edge removal once, preventing a second removal event from overwriting the useful snapshot. Reveal uses the existing selection. Baseline counts compare fields so JSON property order does not imply a changed step. Optional capacity relief is an exercise, not queue simulation.

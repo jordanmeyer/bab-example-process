@@ -64,3 +64,13 @@ Revision note: initial living plan records actual progress and outstanding check
 The owner authorized the checklist corrections. Preserve the acyclic probability model and its independently derived known answers; revise app/App.jsx and app/style.css so capacity leads, nominal time is qualified, and the unclipped editor/list have readable units. Bundle the canonical OFL font files. Update PLAN, DECISIONS and BUILD-STORY before committing. Reinstall pinned dependencies, check inventory and production build, then test /tests/ on 9721 and production /bab-example-process/ on 9722. At 1440/390/320 verify no page overflow, loaded fonts, reachable controls and correct pre-interaction state after Back. Keep failures in EVALUATION. Independent review and coordinator publication follow.
 
 Revision note: the old arithmetic remains valid but its presentation could imply a feasible forecast; this revision makes that limitation decisive and visible.
+
+## Checklist correction continuation — October 9, 2026
+
+- [x] Implement group share Apply/Cancel, one structural snapshot and direct reveal.
+- [x] Explain productive capacity, assumed risk controls, preset/baseline replacement, mobile forms and persistence beside editing.
+- [x] Add complete graph edit/loop/round-trip and capacity-relief model cases; public authored walkthrough and200% text harness.
+- [ ] Complete build/model and actual independent production review; retain failures.
+- [ ] Obtain human novice/screen-reader evidence before claiming those tasks verified.
+
+Source inspection caught the split node/edge deletion event boundary before final review; combined onDelete owns the one snapshot. No full history, autosave, staffing optimizer or stochastic queue model is introduced.

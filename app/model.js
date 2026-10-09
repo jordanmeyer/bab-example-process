@@ -28,7 +28,7 @@ export function validate(process) {
   const edgeIds = new Set(), pairs = new Set();
   for (const edge of process.edges) {
     if (!keysAre(edge, ['id', 'source', 'target', 'share'])) { errors.push('Each route must have exactly id, source, target and share.'); continue; }
-    if (!idValid(edge.id) || edgeIds.has(edge.id) || !ids.has(edge.source) || !ids.has(edge.target) || edge.source === edge.target || !numeric(edge.share, 0, 100) || pairs.has(`${edge.source}|${edge.target}`)) errors.push('Routes need unique IDs/pairs, two different existing steps and a share from 0% to 100%.');
+    if (!idValid(edge.id) || edgeIds.has(edge.id) || !ids.has(edge.source) || !ids.has(edge.target) || edge.source === edge.target || !numeric(edge.share, 0, 100) || pairs.has(`${edge.source}|${edge.target}`)) errors.push(`Route ${edge.id} (${process.nodes.find(n => n.id === edge.source)?.label || edge.source} → ${process.nodes.find(n => n.id === edge.target)?.label || edge.target}): routes need unique IDs/pairs, two different existing steps and a share from 0% to 100%.`);
     edgeIds.add(edge.id); pairs.add(`${edge.source}|${edge.target}`);
   }
   if (errors.length) return [...new Set(errors)];
@@ -46,7 +46,7 @@ export function validate(process) {
     const id = queue.shift(); order.push(id);
     for (const edge of outgoing.get(id)) { degrees.set(edge.target, degrees.get(edge.target) - 1); if (!degrees.get(edge.target)) queue.push(edge.target); }
   }
-  if (order.length !== process.nodes.length) errors.push('A loop is present. This model requires one-way routes with no rework cycles.');
+  if (order.length !== process.nodes.length) errors.push(`A loop is present. Steps blocked from ordering: ${process.nodes.filter(n => !order.includes(n.id)).map(n => n.label).join(', ')}. This model requires one-way routes with no rework cycles.`);
   function reachable(start, direction) {
     const seen = new Set([start]), pending = [start];
     while (pending.length) for (const edge of (direction === 'forward' ? outgoing : incoming).get(pending.shift())) { const next = direction === 'forward' ? edge.target : edge.source; if (!seen.has(next)) { seen.add(next); pending.push(next); } }

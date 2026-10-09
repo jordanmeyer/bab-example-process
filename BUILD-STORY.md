@@ -19,3 +19,7 @@ Browser App Builder Build, Evaluate, Deploy and React Flow guidance informed the
 ## Evidence and limits
 
 [Evaluation rounds](EVALUATION.md) and [independent reviews](REVIEW.md) retain prior failures and tested commits. [Deployment](DEPLOYMENT.md) distinguishes what has actually gone live. New revision checks are added after they run, never inferred from implementation. This is an exclusive-routing workload model: no parallel work, rework, queueing, staffing optimization or completion forecast.
+
+## Try the lesson
+
+[Prediction exercises and answers](WALKTHROUGH.md) explain the unchanged Finance bottleneck, productive capacity, a bounded arrival/capacity experiment and a complete native-form graph edit with loop recovery. Route groups now apply together; structural edits have one undo snapshot. The walk-through is an authored teaching task, not an invented novice or screen-reader result.

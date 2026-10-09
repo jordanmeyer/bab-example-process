@@ -44,4 +44,13 @@ const merge = parseProcess(await (await fetch('./fixtures/reviewer-merge.json'))
 check('Independent multi-merge: C40%, D60%, 175 touch +18 wait =193',()=>{const r=analyze(merge);near(r.rows.find(n=>n.id==='c').visits,.4);near(r.rows.find(n=>n.id==='d').visits,.6);near(r.touch,175);near(r.wait,18);near(r.elapsed,193);near(r.teams[0].work,1750);});
 const large = parseProcess(await (await fetch('./fixtures/reviewer-long.json')).text());
 check('Supported large bound: 9,600 minutes and 96,000,000 work/day',()=>{const r=analyze(large);near(r.elapsed,9600);near(r.teams[0].work,96000000);near(r.teams[0].load*100,9600000000);});
+check('Complete graph edit: extra review, coherent90/10 shares, team capacity, loop recovery and JSON round trip',()=>{
+ const p=sampleProcess();p.nodes.push({id:'extra-review',label:'Extra review',type:'review',team:'manager',touch:10,wait:0,position:{x:600,y:300}});
+ p.edges.find(e=>e.id==='manager-finance').target='extra-review';p.edges.push({id:'extra-finance',source:'extra-review',target:'finance',share:100});
+ p.edges.find(e=>e.id==='manager-procurement').share=10;p.edges.find(e=>e.id==='manager-finance').share=90;p.teams[0].capacity=680;
+ const r=analyze(p);if(!r.valid)throw Error(r.errors.join(' '));near(r.elapsed,379.5);near(r.rows.find(n=>n.id==='extra-review').visits,.9);near(r.teams[0].work,680);near(r.teams[0].load,1);
+ const before=structuredClone(p);p.edges.find(e=>e.id==='extra-finance').target='manager';const invalid=analyze(p);if(invalid.valid||!invalid.errors.some(e=>e.includes('loop')&&e.includes('Extra review')&&e.includes('Manager approval')))throw Error('Loop did not name blocked steps');
+ equal(parseProcess(JSON.stringify(before)),before);near(analyze(before).elapsed,379.5);
+});
+check('Capacity relief arrival35 exactly fits Finance420 without changing nominal471.5',()=>{const p=sampleProcess();p.arrivals=35;const r=analyze(p);near(r.elapsed,471.5);near(r.teams.find(t=>t.id==='finance').load,1);if(r.teams.some(t=>t.load>1))throw Error('Still overloaded');p.arrivals=34;near(analyze(p).teams.find(t=>t.id==='finance').work,408);});
 const status=document.getElementById('status');status.textContent=`${count-failures}/${count} passed; ${failures} failed.`;status.className=failures?'fail':'pass';
