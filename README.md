@@ -18,7 +18,7 @@ Touch and entered wait are separate minute inputs. Every route is an alternative
 
 ## Develop and verify
 
-Use Node22.19.0/npm10.9.3. npm ci --cache /private/tmp/bab-npm-cache; npm run test:browser -- --port 9507; open /tests/. npm run build collects notices and compiles app/ to dist; npm run preview -- --port 9508 serves /bab-example-process/. npm run dev is available. tests/layout.html provides production frames at1440/390/320 with both servers running. Browser checks import app/model.js; production packaging is evaluated separately. EVALUATION and REVIEW preserve outcomes and failed rounds.
+Use Node22.19.0/npm10.9.3. npm ci --cache /private/tmp/bab-npm-cache; npm run test:browser -- --port 9507; open /tests/. npm run build collects notices and compiles app/ to dist; npm run preview -- --port 9508 serves /bab-example-process/. npm run dev is available. tests/layout.html provides production frames at1440/390/320 with both servers running; ?width=320, ?width=390 or ?width=1440 shows just one frame. Browser checks import app/model.js; production packaging is evaluated separately. EVALUATION and REVIEW preserve outcomes and failed rounds.
 
 ## Provenance
 

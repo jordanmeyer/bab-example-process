@@ -43,7 +43,7 @@ From this root run npm ci --cache /private/tmp/bab-npm-cache; node /Users/jordan
 
 ## Validation and Acceptance
 
-Model page must visibly show34/34 passed and0 failed. Original elapsed471.5, simplified370.5, reduction101; finance work480/load114.3% remains. Editing route shares to110% pauses results with an explicit Manager error; restore last valid recovers. Add/delete/reconnect operations update real graph structure. An invalid JSON import cannot replace current state; valid round trip preserves exact process. Native forms/keyboard provide alternatives to canvas dragging. No console errors, missing nodes, clipped controls or page overflow at320; graph/table interaction is intentionally two-dimensional. Record observation limits honestly, especially frame testing versus devices and limited request capture.
+Model page must visibly show37/37 passed and0 failed after adding the finite-assertion and independent reviewer cases. Original elapsed471.5, simplified370.5, reduction101; finance work480/load114.3% remains. Editing route shares to110% pauses results with an explicit Manager error; restore last valid recovers. Add/delete/reconnect operations update real graph structure. An invalid JSON import cannot replace current state; valid round trip preserves exact process. Native forms/keyboard provide alternatives to canvas dragging. No console errors, missing nodes, clipped controls or page overflow at320; graph/table interaction is intentionally two-dimensional. Record observation limits honestly, especially frame testing versus devices and limited request capture.
 
 ## Idempotence and Recovery
 

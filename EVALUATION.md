@@ -11,3 +11,10 @@ Actual production example button gave370.5min,−101min,21.4%, finance still ove
 ## Final round
 
 Pending committed checkpoint, reinstall/build, full production interaction/narrow check and independent reviewer verdict. Required failures will remain in this record and REVIEW.md.
+
+
+## Independent source review — required correction at95ad432
+
+Reviewer found the test helper near() could accept NaN/undefined: Math.abs(NaN)>tolerance is false. Corrected it to require Number.isFinite(actual) and added an explicit helper rejection check. Added reviewer-authored multi-merge and supported-bound fixtures with independent expected193min and9,600min answers; these are not fixtures inferred from app outputs. Final suite now has37 cases. Reviewer also requested actual rendered probes for80-character unbroken names and large supported load values. Those UI probes remain pending; source suspicion alone is not represented as a reproduced defect.
+
+To support the already-approved80-character labels and bounded large loads, added one shared wrapping rule for imported card/node text and separated the percent-unit label from its responsive number. This is a source-level correction pending the independent rendered bound check, not a claimed reproduced UI failure. The single-width frame query makes that check straightforward. An attempted cross-frame file chooser timed out and reset the browser tool; no import occurred in that attempt.

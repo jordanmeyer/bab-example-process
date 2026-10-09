@@ -1,6 +1,6 @@
 import { analyze, validate, parseProcess, sampleProcess } from '../app/model.js';
 let count=0, failures=0;
-const near=(actual,expected)=>{if(Math.abs(actual-expected)>1e-9) throw Error(`expected ${expected}; observed ${actual}`);};
+const near=(actual,expected)=>{if(!Number.isFinite(actual)||Math.abs(actual-expected)>1e-9) throw Error(`expected ${expected}; observed ${actual}`);};
 const equal=(actual,expected)=>{if(JSON.stringify(actual)!==JSON.stringify(expected)) throw Error(`expected ${JSON.stringify(expected)}; observed ${JSON.stringify(actual)}`);};
 function check(name,fn){count++;const li=document.createElement('li');try{fn();li.textContent=`PASS — ${name}`;li.className='pass';}catch(e){failures++;li.textContent=`FAIL — ${name}: ${e.message}`;li.className='fail';}document.getElementById('results').append(li);}
 function invalid(name,change,match){check(name,()=>{const p=sampleProcess();change(p);const r=analyze(p);if(r.valid||!r.errors.join(' ').includes(match))throw Error(`expected ${match}; observed ${JSON.stringify(r)}`);});}
@@ -39,4 +39,9 @@ check('Null row is rejected with a schema error, not a crash',()=>{const p=sampl
 check('Unrecognized fields are rejected',()=>{const p=sampleProcess();p.secret='discard me';if(!validate(p).length)throw Error('extra field accepted');});
 check('JSON byte limit is checked before parsing',()=>{let error;try{parseProcess('x'.repeat(262145));}catch(e){error=e;}if(!error?.message.includes('256 KiB'))throw Error('missing size error');});
 check('HTML-looking labels remain plain strings in the model',()=>{const p=sampleProcess();p.nodes[1].label='<b>Manager</b>';equal(parseProcess(JSON.stringify(p)).nodes[1].label,'<b>Manager</b>');});
+check('Numerical assertions reject NaN, undefined and infinity',()=>{for(const value of [NaN,undefined,Infinity]){let rejected=false;try{near(value,1);}catch{rejected=true;}if(!rejected)throw Error('nonfinite value passed');}});
+const merge = parseProcess(await (await fetch('./fixtures/reviewer-merge.json')).text());
+check('Independent multi-merge: C40%, D60%, 175 touch +18 wait =193',()=>{const r=analyze(merge);near(r.rows.find(n=>n.id==='c').visits,.4);near(r.rows.find(n=>n.id==='d').visits,.6);near(r.touch,175);near(r.wait,18);near(r.elapsed,193);near(r.teams[0].work,1750);});
+const large = parseProcess(await (await fetch('./fixtures/reviewer-long.json')).text());
+check('Supported large bound: 9,600 minutes and 96,000,000 work/day',()=>{const r=analyze(large);near(r.elapsed,9600);near(r.teams[0].work,96000000);near(r.teams[0].load*100,9600000000);});
 const status=document.getElementById('status');status.textContent=`${count-failures}/${count} passed; ${failures} failed.`;status.className=failures?'fail':'pass';
