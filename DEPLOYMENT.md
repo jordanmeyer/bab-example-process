@@ -1,7 +1,8 @@
-# Deployment preparation
+# Deployment
 
-Coordinator-approved repository https://github.com/jordanmeyer/bab-example-process and intended site https://jordanmeyer.github.io/bab-example-process/. Vite base/source link/Node22.19.0/managed Pages workflow are included before final checkpoint. Workflow publishes only dist from main. Source and pushed history, including approved attribution, will be public. Developer has not created a remote repository or pushed.
+Public repository: https://github.com/jordanmeyer/bab-example-process
+Live app: https://jordanmeyer.github.io/bab-example-process/
 
-After independent PASS, coordinator must check source/PLAN freshness, create/reuse the authorized public destination, configure Pages from GitHub Actions, push ordinary commits, wait for the exact revision's successful deployment and verify live assets, a known answer, source link and returning-browser update. Record deployed/evaluated hashes, workflow and live observations here. A local build does not establish publication.
+Reviewed/evaluated source: `aca04afaa1046785df0f46b7f95dbc14fc5f556e`. Published commit: `8e868939da3e900ee1353b33b32f53c15e23a383`. Source matches the reviewed checkpoint; subsequent changes are reports. Successful Pages Actions run: https://github.com/jordanmeyer/bab-example-process/actions/runs/37891183640.
 
-Updates use source edits, affected evaluation, ordinary commits and main push; no force push. Imported assets are fingerprinted. Changed verbatim public assets need explicit versioning. The only current public asset is the library notice file.
+The coordinator independently verified the live application on 2026-10-09. Baseline expected elapsed time is 471.5 minutes. The 90/10 policy gives 370.5 minutes, a reduction of 101 minutes (21.4%), while Finance still requires 480 minutes against 420 available. Both versioned repository-path assets loaded, the editable graph rendered, source and local notices links were correct, and captured warning/error logs were empty. A clean publication build removed temporary review harnesses; only application output and notices were published.
